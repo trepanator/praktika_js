@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>диджериджу</title>
+</head>
+<body>
+    <script>
+        alert("Начало работы скрипта");
+        qu = confirm("Закрыть окно?");
+        document.writeln(qu+';');
+        uname = prompt("Введите имя", "Квазимодник");
+        document.writeln("Имя " + uname)
+        </script>
+    <h1>Редактор кодов JavaScript</h1><br><br>
+
+    <h4>Код:</h4><br>
+    <textarea id ="user_code" rows="10" cols="60"></textarea><br><br>
+
+    <h4>Результат:</h4><br>
+    <textarea id ="result" rows="3" cols="60"></textarea><br><br>
+    
+    <button onclick="document.all.result.value=eval(user_code.value)">Выполнить</button>
+    <button onclick="document.all.user_code.value='';document.all.result.value='';">Очистить</button>
+   
+   <br> <br> <script> 
+ adres = "petrov.vi@mail.ru"
+ i = adres.indexOf("@")
+ user = adres.substr(0,i)
+ domen = adres.substr(i+1)
+ document.writeln("Пользователь: ", user, "<br>Домен: ",domen)
+ </script>
+ <br> <br> <script>
+ function вставка_строки(s1, s2, n) {
+ return s1.slice(0,n) + s2 + s1.slice(n)
+ }
+ x = вставка_строки ("Привет студентам", " , ", 16)
+ y = вставка_строки ("обучающимся в группе!", " 2527", 13)
+ document.writeln(x)
+ document.writeln(y)
+ </script>
+ <br><br><script>
+function min(массив) {
+ var m = массив[0]
+ for (i=1; i < массив.length; i++)
+ if (массив[i] < m)
+ m = массив[i]
+ return m
+ }
+ function max(массив) {
+ var m = массив[0]
+ for (i=1; i < массив.length; i++)
+ if (массив[i] > m)
+ m = массив[i]
+ return m
+ }
+a = new Array(25, -5, 13, 18, 1024, 47, 21, 91, 10)
+ document.writeln(min(a),"<br/>")
+ document.writeln(max(a))
+ </script>
+ <br><br><script>
+ function to16(n10) {
+ s = "0123456789abcdef"
+ if (n10 > 255) return null
+ i = n10 % 16
+ j = (n10 - i) / 16
+ rezult = "0x"
+ rezult += s.charAt(j)
+ rezult += s.charAt(i)
+ return rezult
+ }
+ document.writeln(to16(16), " ", to16(100), " ", to16(128))
+ </script>
+ <script>
+function to2(n10) {
+ if (n10 < 2) return "" + n10 //для получения результата в виде строки
+ i = n10 % 2
+ j = (n10 - i) / 2
+ return to2(j) + i
+ }
+ document.writeln("<p>", to2(7), " ", to2(15), " ", to2(178))
+ </script>
+ <script>
+function квадратное_уравнение(a,b,c) {
+var корень = new Array()
+var D = b*b - 4*a*c
+if (a == 0) {
+if (!(b==0)) {
+корень[0] = -c/b
+корень[1] = null
+}
+return корень // единственный корень или нет корней
+}
+if (D == 0) { // одинаковые корни
+корень[0] = -b/2/a
+корень[1] = корень[0]
+}
+if (D > 0) { // различные корни
+корень[0] = (-b - Math.sqrt(D)) / 2 / a
+корень[1] = (-b + Math.sqrt(D)) / 2 / a
+}
+return корень
+}
+document.writeln("<p>(", 
+квадратное_уравнение(0,2,6), "); (", 
+квадратное_уравнение(1,-2,1), ");<br> (")
+document.writeln(квадратное_уравнение(3,4,-2.5), "); (", квадратное_уравнение(2,0,5), ");</p>")
+ </script>
+ <script>
+dt = new Date()
+document.writeln("Время: " + dt.getHours() + ":" + dt.getMinutes() + "<br/>")
+document.writeln("Cегодня: " + (dt.getMonth()+1) + "/" + dt.getDate() + "/" + dt.getYear())
+ </script>
+<br> <br> <script>
+    function ссылка() {
+    res = confirm ("Перейти по ссылке?")
+    if (!res) window.event.returnValue = false
+    }
+    </script>
+    <a onclick="ссылка()" href="http://www.asu.ru">Сайт АлтГУ</a>
+   <br> <br> <script>
+        function ссылка() {
+        alert("Был щелчок на ссылке")
+        window.event.returnValue = false
+        }
+        </script>
+        <a onclick="ссылка()" href="">Здесь ничего нет</a>
+        <br><br>
+        <div onclick="alert('Щелчок по блоку')">
+            <img src="изображение.jpg" >
+            <button onclick="alert('Щелчок по кнопке')">Нажмите</button>
+            </div>
+            <br><br><div onclick="alert('Щелчок по блоку')">
+                <img src="изображение.jpg" >
+                <button onclick="alert('Щелчок по кнопке');window.event.cancelBubble=true">Нажмите</button>
+                </div>
+                <center>
+                    <img src="изображение.jpg" name="p1" width="128" height="128">
+                    </center>
+                    <p>
+                    <form name="f1">
+                    Имя:
+                    <input type="text" name="t1" value=""><br/>
+                    e-mail:
+                    <input type="text" name="t2" value=""><br/><br/>
+                    <input type="button" name="b1" value="Нажмите"onClick="alert('Привет!')"><br/><br/>
+                    <input type="text" name="t3" value="Привет">
+                    <input type="button" value="На английском"onClick="document.f1.t3.value='Hello'">
+                    </form>
+                    </p>
+                    <p>
+                    <a href="http://www.asu.ru">Сайт АлтГУ</a>
+                    </p>
+                    <br> <br> <script>
+                        function out() {
+                        alert(document.form1.fieldtext.value);
+                        }
+                        function check() {
+                        // проверка состояния флажка
+                        var str = "Флажок ";
+                        if (document.form1.box.checked)
+                        str += "установлен"
+                        else
+                        str += "не установлен";
+                        alert(str);
+                        }
+                        </script>
+                        <form name="form1">
+                        <input type="text" name="fieldtext" value="первоначальный текст">
+                        <input type="button" name="button1" value="Кнопка 1"onClick="out()">
+                        <br>
+                        <input type="checkbox" name="box" CHECKED>
+                        <input type="button" name="button2" value="Кнопка 2"onClick="check()">
+                        </form>
+                        <br> <br> <script>
+var imgFile = new Array() // массив имен графических файлов
+imgFile[0] = "изображение0.jpg"
+imgFile[1] = "изображение1.jpg"
+imgFile[2] = "изображение2.jpg"
+var imgName = new Array() // массив названий картинок
+imgName[0] = "Первая картинка"
+imgName[1] = "Вторая картинка"
+imgName[2] = "Третья картинка"
+var imgObj = new Array() // массив объектов изображений
+for (i=0; i<imgFile.length; i++) {
+imgObj[i] = new Image(100,100)
+imgObj[i].src = imgFile[i]
+}
+function imgshow(list) {
+var x = list.options[list.selectedIndex].value
+document.all.img0.src = eval("imgObj[" + x + "].src")
+}
+var clist = "<select onchange = 'imgshow(this)'>"
+for (i=0; i < imgFile.length; i++) 
+clist += "<option value=" + i + ">" + imgName[i]
+clist += "</select>"
+document.write(clist)
+</script>              
+<br> <br> <script>
+    var flag=false
+    function imgchange() {
+    if (flag) 
+    document.all.img0.src='изображение0.jpg'
+    else 
+    document.all.img0.src='изображение1.jpg'
+    flag = !flag
+    }
+    </script>
+    <img id="img0" src="изображение0.jpg" onclick="imgchange()">
+    <br> <br> <script>
+        var pic_sm = new Array("изображение1.jpg", "изображение2.jpg", "изображение3.jpg")
+        var pic_bg = new Array("изображение11.jpg", "изображение12.jpg", "изображение13.jpg")
+        var pic_flag = new Array(pic_sm.length) // массив флагов
+        /* Формирование строки тегов изображений */
+        var xstr = ""
+        for (i=0; i<pic_sm.length; i++)
+        xstr += '<img id="img'+i+'" 
+        src="'+pic_sm[i]+'" onclick="imgchange()">'
+        document.write(xstr)
+        function imgchange() {
+        var xid=event.srcElement.id //id изображения, на котором был щелчок
+        var n=parseInt(xid.substr(3)) // выделяем номер элемента
+        if (pic_flag[n]) 
+        document.all[xid].src=pic_sm[n]
+        else document.all[xid].src=pic_bg[n]
+        pic_flag[n] = !pic_flag[n]
+        }
+        </script>
+       <br> <br> <select name="group">
+            <option>понедельник, среда, пятница</option>
+            <option> вторник, четверг, суббота</option>
+            <option> воскресенье</option>
+            </select>
+            <select single name="group" size="3">
+            <option>зима</option>
+            <option>весна</option>
+            <option>лето</option>
+            <option>осень</option>
+            </select>
+            <br> <br> <title>Часы</TITLE>
+                <script type="text/javascript">
+                function tt() {
+                var t=new Date();
+                document.clock.t1.value=t.toLocaleString(); // 1-ый вариант
+                document.getElementById("t2").innerHTML=t.toLoc
+                aleString(); // 2-ой вариант
+                setTimeout('tt()',500) }
+                </script>
+                <form name=clock>
+                <input type=text size=20 name=t1><!-- 1-ый вариант -->
+                <span id="t2"></span><!-- 2-ой вариант -->
+                </form>
+                <script type="text/javascript"> tt(); 
+                </script>
+<br><br>	
+<h1>Для навигации в Web используются:</h1>
+<script type="text/javascript">
+document.write("<li>Имя программы:<b>"+navigator.appName+"</b>");
+document.write("<li>Версия:<b>"+navigator.appVersion+"</b>");
+document.write("<li>Пользовательский агент:<b>"+navigator.userAgent+"</b>");
+document.write("<li>Платформа: <b>"+navigator.platform+"</b>");
+</script>     
+</body>                
+</html> 
